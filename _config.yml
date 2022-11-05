@@ -1,3 +1,4 @@
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
+theme: jekyll-theme-hacker
 title: MARCOSSARLO's homepage
 description: Esta será mi página en GitGub Pages 
