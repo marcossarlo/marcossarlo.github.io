@@ -200,10 +200,11 @@
 /* Estilos para el icono de hamburguesa */
 .hamburger {
 	display: none;
-	font-size: 30px;
+	font-size: 25px;
 	background: none;
 	border: none;
 	color: #7d6ec5;
+	padding: 0 30px;
 	cursor: pointer;
   }
 
@@ -229,6 +230,10 @@
 	.msl {
 		display: none;
 	}
+	.msl1 {
+		color: #ffffff;
+	}
+
   }
 
   
