@@ -58,6 +58,11 @@
 	color: #9775fa;
   }
 
+ .msl {
+	/* color: #ffffff; */
+	font-weight: normal;
+  }
+
   main {
 	padding: 0 40px;
   }
@@ -155,21 +160,41 @@
   }
   
   footer {
-	text-align: center;
-	padding: 10px 0;
-	background: #9775fa;
+	display: flex;
+    justify-content: space-between;
+	justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 30px;
+    background: #9775fa;
+    color: #1c1828;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+	margin: 0;
+  }
+  
+  footer .social-links {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+  }
+  
+  footer .social-links li {
+	margin: 0 10px;
+  }
+  
+  footer .social-links a {
 	color: #1c1828;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+	font-size: 24px;
+	transition: color 0.3s;
   }
   
-  footer a {
+  footer .social-links a:hover {
 	color: #dcd7f2;
-  }
-  
-  footer a:hover {
-	color: #9775fa;
   }
 
 /* Estilos para el icono de hamburguesa */
@@ -183,7 +208,7 @@
   }
 
 /* Estilos para vistas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 838px) {
 	.hamburger {
 	  display: block;
 	}
@@ -201,4 +226,9 @@
 	nav ul li {
 	  margin: 10px 0;
 	}
+	.msl {
+		display: none;
+	}
   }
+
+  
