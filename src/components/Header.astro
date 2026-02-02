@@ -1,12 +1,97 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-280 mx-auto">
+---
+import { Image } from 'astro:assets';
+import marcossarloImg from '../assets/marcossarlo.jpg';
+import MailIcon from './icons/Mail.astro';
+---
+<header class="sticky top-0 flex items-center p-3 w-full mx-auto border-b border-white/20 z-30 bg-black/80 backdrop-blur-md">
+
+    <Image
+				class="rounded-full border-white border-2 size-10"
+				src={marcossarloImg}
+				alt="Foto de Marcossarlo"
+				loading="eager"
+    />
+
+    <div class="text-2xl lg:text-3xl ml-3 lg:absolute lg:left-1/2 lg:-translate-x-1/2"> 
+        {"{ "}
+            <a href="/" class="transition-colors duration-300 hover:text-purple-400 font-bold">
+                marcossarlo
+            </a>
+        {" }"}
+    </div>
     
-    <nav class="flex flex-row gap-x-10 opacity-80">
-        <a href="/">{"{ marcossarlo }"}</a>
-        <a href="#top">Inicio</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
+    <!-- Menú hamburguesa para móviles -->
+    <button id="menu-toggle" class="sm:hidden ml-auto p-2 text-white hover:text-purple-400 transition-colors relative" aria-label="Abrir menú">
+        <svg id="hamburger-icon" class="size-6 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="size-6 absolute top-2 left-2 opacity-0 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <!-- Navegación desktop -->
+    <nav class="hidden sm:flex flex-row gap-x-5 opacity-80 ml-auto">
+        <a href="#experiencia" class="transition-colors duration-300 hover:text-purple-400">Experiencia</a>
+        <a href="#proyectos" class="transition-colors duration-300 hover:text-purple-400">Proyectos</a>
+        <a href="#sobre-mi" class="transition-colors duration-300 hover:text-purple-400">Sobre mí</a>
+        <a href="#contacto" class="text-purple-500 transition-colors duration-300 hover:text-purple-400">
+            <MailIcon class="size-4 md:size-6" />
+        </a>
     </nav>
     
 </header>
+
+<!-- Menú móvil -->
+<nav id="mobile-menu" class="fixed top-14.25 right-4 w-52 bg-black/80 backdrop-blur-md border border-white/20 rounded-lg shadow-lg z-20 opacity-0 scale-95 transition-all duration-300 pointer-events-none sm:hidden">
+    <div class="flex flex-col gap-4 p-6">
+        <a href="#experiencia" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Experiencia</a>
+        <a href="#proyectos" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Proyectos</a>
+        <a href="#sobre-mi" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Sobre mí</a>
+        <a href="#contacto" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Contacto</a>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu?.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+            mobileMenu?.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+            hamburgerIcon?.classList.remove('opacity-100');
+            hamburgerIcon?.classList.add('opacity-0');
+            closeIcon?.classList.remove('opacity-0');
+            closeIcon?.classList.add('opacity-100');
+        } else {
+            mobileMenu?.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            mobileMenu?.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+            hamburgerIcon?.classList.add('opacity-100');
+            hamburgerIcon?.classList.remove('opacity-0');
+            closeIcon?.classList.add('opacity-0');
+            closeIcon?.classList.remove('opacity-100');
+        }
+    }
+
+    menuToggle?.addEventListener('click', toggleMenu);
+
+    // Cerrar menú al hacer clic en un enlace
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) toggleMenu();
+        });
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && !menuToggle?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+            toggleMenu();
+        }
+    });
+</script>

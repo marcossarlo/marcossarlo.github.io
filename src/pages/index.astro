@@ -18,16 +18,16 @@ import CodeIcon from '../components/icons/Code.astro';
 <Layout title="Portfolio de MARCOSSARLO" description="Portafolio de Marcossarlo, ingeniero informático con experiencia en desarrollo web y gestión de plataformas de e-learning.">	
 	<main class="px-4">
 		<!-- Hero Section -->
-		<SectionContainer class="py-44 pb-24">
+		<SectionContainer class="py-20">
 			<Image
 				class="rounded-full border-white border-3 size-20 mb-6"
 				src={marcossarloImg}
 				alt="Foto de Marcossarlo"
 				loading="eager"
 			/>
-			<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy marcossarlo <a href="https://linkedin.com/in/marcossarlo" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center" title="Mira mi LinkedIn"><Badge>Disponible para trabajar</Badge></a></h1>
+			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy marcossarlo <a href="https://linkedin.com/in/marcossarlo" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center" title="Mira mi LinkedIn"><Badge>Disponible</Badge></a></h1>
 
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-175"><span class="opacity-80">Ingeniero informático</span> con experiencia en <span class="text-purple-300">desarrollo web</span> y <span class="text-purple-300">gestión de plataformas de e-learning</span>.</h2>
+			<h2 class="text-xl sm:text-2xl text-wrap max-w-175"><span class="opacity-80">Ingeniero informático</span> con experiencia en <span class="text-purple-300">desarrollo web</span> y <span class="text-purple-300">gestión de plataformas de e-learning</span>.</h2>
 
 			<nav class="flex gap-x-2 mt-8">
 				<SocialPill href="https://linkedin.com/in/marcossarlo" title="Mira mi LinkedIn">
@@ -47,9 +47,10 @@ import CodeIcon from '../components/icons/Code.astro';
 					msl.net@gmail.com
 			</nav>
 		</SectionContainer>
+
 		<!-- Experiencia -->
-		<SectionContainer id="experiencia">
-			<h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+		<SectionContainer id="experiencia" class="py-20">
+			<h2 class="text-2xl sm:text-3xl font-semibold mb-6 flex items-center gap-x-3">
 				<BriefcaseIcon class="size-7" />
 				Experiencia Laboral
 			</h2>
@@ -57,7 +58,7 @@ import CodeIcon from '../components/icons/Code.astro';
 		</SectionContainer>	
 
 		<SectionContainer id="proyectos" class="py-20">
-			<h2 class="text-2xl font-semibold mb-6 flex items-center gap-x-3">
+			<h2 class="text-2xl sm:text-3xl font-semibold mb-6 flex items-center gap-x-3">
 				<CodeIcon class="size-7" />
 				Proyectos
 			</h2>
