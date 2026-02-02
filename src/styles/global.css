@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Configuración de modo oscuro: usa clase 'dark' en el html */
+@variant dark (&:where(.dark, .dark *));
+
+/* Estilos base globales */
+:root {
+	color-scheme: light dark;
+}
+
+html {
+	font-family: Onest Variable, system-ui, sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Reducir animaciones para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+}

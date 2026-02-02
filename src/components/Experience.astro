@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: 'Actualmente ...',
+        title: 'Fondo Verde Internacional | Director de Tecnologías',
+        description: 'Dirigí y ejecuté con éxito la implementación y administración de plataformas de eLearning utilizando LMS Moodle. Supervisé todas las facetas de la plataforma, desde la gestión de usuarios hasta la creación de cursos y la administración de contenidos. Lideré la implementación del portal web institucional mediante CMS Joomla. Gestioné activamente el portal, manteniendo su funcionalidad óptima y su atractivo visual. Realicé labores de soporte técnico con prontitud, garantizando una alta disponibilidad y resolución de problemas, lo que contribuyó al funcionamiento sin problemas de las plataformas y el portal.',
+        link: 'https://www.fondoverde.org',
+    },
+    {
+        date: 'April 2022',
+        title: 'E-Commerce UI code in Tailwind CSS',
+        description: 'Get started with dozens of web components and interactive elements built on top of Tailwind CSS.',
+    },
+    {
+        date: 'February 2022',
+        title: 'Application UI code in Tailwind CSS',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+        link: '#',
+    },
+];
+---
+
+<ol class="relative border-s border-gray-300 dark:border-gray-200 ml-3">
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))    
+    }
+</ol>
