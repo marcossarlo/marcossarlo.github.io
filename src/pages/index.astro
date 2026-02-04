@@ -1,54 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import { Image } from 'astro:assets';
-import marcossarloImg from '../assets/marcossarlo.jpg';
 import SectionContainer from '../components/SectionContainer.astro';
-import SocialPill from '../components/icons/SocialPill.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import GitHubIcon from '../components/icons/GitHub.astro';
-import XIcon from '../components/icons/X.astro';
-import MailIcon from '../components/icons/Mail.astro';
 import BriefcaseIcon from '../components/icons/Briefcase.astro';
+import UserIcon from '../components/icons/User.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import CodeIcon from '../components/icons/Code.astro';
+import AboutMe from '../components/AboutMe.astro';
+import MarcosSarLo from '../components/MarcosSarLo.astro';
 ---
 
 <Layout title="Portfolio de MARCOSSARLO" description="Portafolio de Marcossarlo, ingeniero informático con experiencia en desarrollo web y gestión de plataformas de e-learning.">	
 	<main class="px-4">
 		<!-- Hero Section -->
-		<SectionContainer class="py-20">
-			<Image
-				class="rounded-full border-white border-3 size-20 mb-6"
-				src={marcossarloImg}
-				alt="Foto de Marcossarlo"
-				loading="eager"
-			/>
-			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy marcossarlo <a href="https://linkedin.com/in/marcossarlo" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center" title="Mira mi LinkedIn"><Badge>Disponible</Badge></a></h1>
-
-			<h2 class="text-xl sm:text-2xl text-wrap max-w-175"><span class="opacity-80">Ingeniero informático</span> con experiencia en <span class="text-purple-300">desarrollo web</span> y <span class="text-purple-300">gestión de plataformas de e-learning</span>.</h2>
-
-			<nav class="flex gap-x-2 mt-8">
-				<SocialPill href="https://linkedin.com/in/marcossarlo" title="Mira mi LinkedIn">
-					<LinkedInIcon class="size-4 md:size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/marcossarlo" title="Mira mi GitHub">
-					<GitHubIcon class="size-4 md:size-6" />
-					GitHub
-				</SocialPill>
-				<SocialPill href="https://x.com/marcossarlo" title="Mira mi X">
-					<XIcon class="size-3 md:size-5" />
-					X
-				</SocialPill>
-				<SocialPill href="mailto:msl.net@gmail.com" title="Envíame un correo">
-					<MailIcon class="size-4 md:size-6" />
-					msl.net@gmail.com
-			</nav>
+		<SectionContainer class="py-30">
+			<MarcosSarLo />			
 		</SectionContainer>
 
-		<!-- Experiencia -->
+		<!-- EXPERIENCIA -->
 		<SectionContainer id="experiencia" class="py-20">
 			<h2 class="text-2xl sm:text-3xl font-semibold mb-6 flex items-center gap-x-3">
 				<BriefcaseIcon class="size-7" />
@@ -57,6 +26,7 @@ import CodeIcon from '../components/icons/Code.astro';
 			<Experience />
 		</SectionContainer>	
 
+		<!-- PROYECTOS -->
 		<SectionContainer id="proyectos" class="py-20">
 			<h2 class="text-2xl sm:text-3xl font-semibold mb-6 flex items-center gap-x-3">
 				<CodeIcon class="size-7" />
@@ -64,5 +34,12 @@ import CodeIcon from '../components/icons/Code.astro';
 			</h2>
 			<Projects />
 		</SectionContainer>	
+		<SectionContainer id="acerca-de-mi" class="py-20">
+			<h2 class="text-2xl sm:text-3xl font-semibold mb-6 flex items-center gap-x-3">
+				<UserIcon class="size-7" />
+				Acerca de mí
+			</h2>
+			<AboutMe />
+		</SectionContainer>
 	</main>
 </Layout>

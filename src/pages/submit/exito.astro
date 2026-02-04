@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import { BASE_PATH } from '../../config';
+---
+
+<Layout title="Mensaje Enviado" description="Gracias por ponerte en contacto conmigo. He recibido tu mensaje y te responderé lo antes posible. ">
+	<div class="flex items-center justify-center min-h-full py-20">
+		<SectionContainer class="px-4 text-center">
+			<div class="mb-6">
+				<svg
+					class="size-30 mx-auto text-green-300"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+					></path>
+				</svg>
+			</div>
+			<h1 class="text-2xl text-green-300 mb-4">¡Mensaje Enviado Exitosamente!</h1>
+			<p class="text-lg text-gray-300 dark:text-gray-300 mb-8">
+				Gracias por ponerte en contacto conmigo. He recibido tu mensaje y te responderé lo antes posible.
+			</p>
+			<a
+				href={BASE_PATH}
+				class="inline-block px-6 py-3 text-white bg-purple-500 rounded-md hover:bg-purple-400 transition-colors"
+			>
+				Volver al inicio
+			</a>
+		</SectionContainer>
+	</div>
+</Layout>

@@ -1,0 +1,230 @@
+---
+// ContactForm.astro
+---
+
+<section class="contact-section">
+  <div class="container">
+    <h2>Contáctame</h2>
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      
+      <!-- Access Key (reemplaza con la tuya) -->
+      <input type="hidden" name="access_key" value="bcd57a86-a37c-41d2-b2b0-824fb4296f0e">
+      
+      <!-- Opcional: Configuración adicional -->
+      <input type="hidden" name="subject" value="Nuevo mensaje desde tu sitio web">
+      <input type="hidden" name="from_name" value="Mi Sitio Web">
+      
+      <!-- Protección anti-spam (honeypot) -->
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      
+      <!-- Campos del formulario -->
+      <div class="form-group">
+        <label for="name">Nombre completo</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required 
+          placeholder="Juan Pérez"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          placeholder="juan@ejemplo.com"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Teléfono (opcional)</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          placeholder="+54 11 1234-5678"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          required 
+          rows="6"
+          placeholder="Escribe tu mensaje aquí..."
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">
+        Enviar Mensaje
+      </button>
+
+      <!-- Mensajes de respuesta -->
+      <div id="result" class="result-message"></div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .btn-submit {
+    background: #4F46E5;
+    color: white;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .btn-submit:hover {
+    background: #4338CA;
+  }
+
+  .btn-submit:disabled {
+    background: #9CA3AF;
+    cursor: not-allowed;
+  }
+
+  .result-message {
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+  }
+
+  .result-message.show {
+    display: block;
+  }
+
+  .result-message.success {
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #10B981;
+  }
+
+  .result-message.error {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #EF4444;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const result = document.getElementById('result') as HTMLDivElement;
+  const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Deshabilitar botón y cambiar texto
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
+    
+    // Ocultar mensajes anteriores
+    result.classList.remove('show', 'success', 'error');
+    
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        result.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
+        result.classList.add('show', 'success');
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Error al enviar el mensaje');
+      }
+    } catch (error) {
+      result.textContent = 'Hubo un error. Por favor, intenta nuevamente.';
+      result.classList.add('show', 'error');
+    } finally {
+      // Rehabilitar botón
+      submitButton.disabled = false;
+      submitButton.textContent = 'Enviar Mensaje';
+      
+      // Ocultar mensaje después de 5 segundos
+      setTimeout(() => {
+        result.classList.remove('show');
+      }, 5000);
+    }
+  });
+</script>

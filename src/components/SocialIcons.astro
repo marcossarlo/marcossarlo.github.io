@@ -1,0 +1,24 @@
+---
+import SocialPill from './icons/SocialPill.astro';
+import LinkedInIcon from './icons/LinkedIn.astro';
+import GitHubIcon from './icons/GitHub.astro';
+import XIcon from './icons/X.astro';
+import MailIcon from './icons/Mail.astro';
+---
+<nav class="flex gap-x-2 mt-8">
+    <SocialPill href="https://linkedin.com/in/marcossarlo" title="Mira mi LinkedIn">
+        <LinkedInIcon class="size-6 md:size-6" />
+        LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/marcossarlo" title="Mira mi GitHub">
+        <GitHubIcon class="size-6 md:size-6" />
+        GitHub
+    </SocialPill>
+    <SocialPill href="https://x.com/marcossarlo" title="Mira mi X">
+        <XIcon class="size-6 md:size-6" />
+    </SocialPill>
+    <!-- <SocialPill href="mailto:msl.net@gmail.com" title="Envíame un correo">
+        <MailIcon class="size-4 md:size-6" />
+        msl.net@gmail.com
+    </SocialPill> -->
+</nav>

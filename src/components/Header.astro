@@ -2,19 +2,22 @@
 import { Image } from 'astro:assets';
 import marcossarloImg from '../assets/marcossarlo.jpg';
 import MailIcon from './icons/Mail.astro';
+import { BASE_PATH } from '../config';
 ---
 <header class="sticky top-0 flex items-center p-3 w-full mx-auto border-b border-white/20 z-30 bg-black/80 backdrop-blur-md">
-
-    <Image
-				class="rounded-full border-white border-2 size-10"
-				src={marcossarloImg}
-				alt="Foto de Marcossarlo"
-				loading="eager"
-    />
+    
+    <a href={BASE_PATH} class="shrink-0">
+        <Image
+            class="rounded-full border-white border-2 size-10 hover:border-purple-400 transition-colors duration-300"
+            src={marcossarloImg}
+            alt="Foto de Marcossarlo"
+            loading="eager"
+        />
+    </a>
 
     <div class="text-2xl lg:text-3xl ml-3 lg:absolute lg:left-1/2 lg:-translate-x-1/2"> 
         {"{ "}
-            <a href="/" class="transition-colors duration-300 hover:text-purple-400 font-bold">
+            <a href={BASE_PATH} class="transition-colors duration-300 hover:text-purple-400 font-bold">
                 marcossarlo
             </a>
         {" }"}
@@ -32,10 +35,10 @@ import MailIcon from './icons/Mail.astro';
 
     <!-- Navegación desktop -->
     <nav class="hidden sm:flex flex-row gap-x-5 opacity-80 ml-auto">
-        <a href="#experiencia" class="transition-colors duration-300 hover:text-purple-400">Experiencia</a>
-        <a href="#proyectos" class="transition-colors duration-300 hover:text-purple-400">Proyectos</a>
-        <a href="#sobre-mi" class="transition-colors duration-300 hover:text-purple-400">Sobre mí</a>
-        <a href="#contacto" class="text-purple-500 transition-colors duration-300 hover:text-purple-400">
+        <a href={`${BASE_PATH}#experiencia`} class="transition-colors duration-300 hover:text-purple-400">Experiencia</a>
+        <a href={`${BASE_PATH}#proyectos`} class="transition-colors duration-300 hover:text-purple-400">Proyectos</a>
+        <a href={`${BASE_PATH}#acerca-de-mi`} class="transition-colors duration-300 hover:text-purple-400">Acerca de mí</a>
+        <a href={`${BASE_PATH}contacto`} class="text-purple-500 transition-colors duration-300 hover:text-purple-400">
             <MailIcon class="size-4 md:size-6" />
         </a>
     </nav>
@@ -45,10 +48,10 @@ import MailIcon from './icons/Mail.astro';
 <!-- Menú móvil -->
 <nav id="mobile-menu" class="fixed top-14.25 right-4 w-52 bg-black/80 backdrop-blur-md border border-white/20 rounded-lg shadow-lg z-20 opacity-0 scale-95 transition-all duration-300 pointer-events-none sm:hidden">
     <div class="flex flex-col gap-4 p-6">
-        <a href="#experiencia" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Experiencia</a>
-        <a href="#proyectos" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Proyectos</a>
-        <a href="#sobre-mi" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Sobre mí</a>
-        <a href="#contacto" class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Contacto</a>
+        <a href={`${BASE_PATH}#experiencia`} class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Experiencia</a>
+        <a href={`${BASE_PATH}#proyectos`} class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Proyectos</a>
+        <a href={`${BASE_PATH}#acerca-de-mi`} class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Acerca de mí</a>
+        <a href={`${BASE_PATH}contacto`} class="text-lg transition-colors duration-300 hover:text-purple-400 mobile-menu-link">Contacto</a>
     </div>
 </nav>
 
