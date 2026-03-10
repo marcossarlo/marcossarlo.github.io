@@ -12,34 +12,77 @@ const PROJECTS = [
         tags: ["Joomla", "PHP", "SP Page Builder"]
     },
     {
-        title: "E-commerce Platform",
-        description: "An e-commerce platform with a user-friendly interface, shopping cart functionality, and secure payment integration.",
-        link: "#",
+        title: "Fondo Verde Open",
+        description: "Desarrollo de la plataforma de e-learning de Fondo Verde. Implementación de funcionalidades personalizadas para mejorar la experiencia de aprendizaje y la gestión de cursos en Moodle.",
+        link: "https://www.fondoverdeopen.net/",
         gitgub: "#",
         image: projectFondoverde,
-        tags: ["React", "Node.js", "MongoDB"]
+        tags: ["Moodle", "PHP", "MySQL"]
+    },
+    {
+        title: "Fondo Verde Institute",
+        description: "Desarrollo del portal Fondo Verde Institute. ",
+        link: "https://fondoverdeinstitute.com/",
+        gitgub: "#",
+        image: projectFondoverde,
+        tags: ["Joomla", "PHP", "MySQL"]
+    },
+    {
+        title: "CEFPRO de Fondo Verde",
+        description: "Desarrollo del website CEFPRO - Centro de Formación Profesional Ocupacional - Fondo Verde. Ofrece formación laboral flexible y de calidad en sostenibilidad y medio ambiente. Diplomados online para mejorar el perfil profesional del profesional.",
+        link: "https://www.fondoverde.org/diplomados/",
+        gitgub: "#",
+        image: projectFondoverde,
+        tags: ["Joomla", "PHP", "SP Page Builder", "MySQL"]
+    },
+    {
+        title: "Profesional en Medio Ambiente - PMA™",
+        description: "Desarrollo del portal para la Certificación PMA™. El PMA™ es un programa de certificación profesional en sostenibilidad y medio ambiente que valida las competencias y conocimientos de los profesionales en el sector ambiental, promoviendo la excelencia y el desarrollo profesional en la industria verde.",
+        link: "https://profesionalenmedioambiente.com/",
+        gitgub: "#",
+        image: projectFondoverde,
+        tags: ["Joomla", "PHP", "MySQL"]
+    },
+    {
+        title: "Academia PMA™",
+        description: "Desarrollo de la plataforma de e-learning de Academia PMA™. Implementación de funcionalidades personalizadas para mejorar la experiencia de aprendizaje y la gestión de cursos en Moodle.",
+        link: "https://www.academiapma.net/",
+        gitgub: "#",
+        image: projectFondoverde,
+        tags: ["Moodle", "PHP", "MySQL"]
+    },
+    {
+        title: "Certificación PMA™",
+        description: "Sistema oficial de verificación de certificaciones profesionales ambientales PMA™. Ingresa un CUR para validar credenciales.",
+        link: "https://www.registropma.net/",
+        gitgub: "#",
+        image: projectFondoverde,
+        tags: ["Laravel", "PHP", "MySQL"]
     }
 ]
 ---
 {
-    PROJECTS.map(({title, description, image, tags}) => (
+    PROJECTS.map(({title, description, link, image, tags}) => (
         <article>
-            <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-purple-300 my-2 mt-4">{title}</h3>
+            <h3 class="text-lg sm:text-2xl font-semibold text-gray-900 dark:text-purple-300 my-2 mt-4">{title}</h3>
             <p class="text-base sm:text-lg mb-4 font-normal text-gray-600 dark:text-gray-300 text-pretty">{description}</p>
-            <ul class="flex gap-x4 flex-row">
+            <ul class="flex gap-x4 flex-row mb-2">
                 {
                     tags?.map(tag => (
-                        <li class="flex gap-x-2 rounded-full text-xs py-2 px-1 background-gray-200 dark:background-gray-700 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600">
+                        <li class="flex gap-x-2 rounded-full text-xs py-2 px-1 background-gray-200 dark:background-gray-700 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-purple-400">
                             {tag}
                         </li>
                     ))                
                 }
             </ul>
             <Image 
-                class="rounded-3xl border-3 border-slate-400 shadow-2xl shadow-white/20"
+                class="rounded-3xl border-3 border-slate-400 shadow-2xl shadow-white/20 transition-all duration-500 hover:scale-105 hover:rotate-1 hover:border-purple-400"
                 src={image} alt={`Captura de pantalla del proyecto: ${title}`} 
             />
+            <a href={link} target="_blank" class="inline-flex items-center text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 box-border border border-gray-300 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none mt-4">
+                Ver proyecto {" "}
+                <svg class="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
+            </a>
         </article>
     ))
-
 }

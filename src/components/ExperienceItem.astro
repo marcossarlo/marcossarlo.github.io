@@ -2,18 +2,21 @@
 interface Props {
     date: string;
     title: string;
+    subtitle?: string;
     description: string;
     link?: string;
 }
-const { date, title, description, link } = Astro.props;
+const { date, title, subtitle, description, link } = Astro.props;
 ---
 <div class="absolute w-3 h-3 bg-gray-200 dark:bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-800"></div>
 
 <time class="text-sm font-normal leading-none text-gray-600 dark:text-gray-400">{date}</time>
 
-<h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-purple-300 my-2 mt-4">{title}</h3>
+<h3 class="text-lg sm:text-2xl font-semibold text-gray-900 dark:text-purple-300 my-2 mt-4">{title}</h3>
 
-<p class="text-base sm:text-lg mb-4 font-normal text-gray-600 dark:text-gray-300 text-pretty">{description}</p>
+{subtitle && <p class="text-md sm:text-lg font-medium text-gray-700 dark:text-white pb-2 underline">{subtitle}</p>}
+
+<div class="text-base sm:text-lg mb-4 font-normal text-gray-600 dark:text-gray-300 text-pretty" set:html={description} />
 
 {/* Link Button */
     link && (

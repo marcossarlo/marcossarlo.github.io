@@ -4,20 +4,31 @@ import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCE = [
     {
         date: 'Actualmente ...',
-        title: 'Fondo Verde Internacional | Director de Tecnologías',
-        description: 'Dirigí y ejecuté con éxito la implementación y administración de plataformas de eLearning utilizando LMS Moodle. Supervisé todas las facetas de la plataforma, desde la gestión de usuarios hasta la creación de cursos y la administración de contenidos. Lideré la implementación del portal web institucional mediante CMS Joomla. Gestioné activamente el portal, manteniendo su funcionalidad óptima y su atractivo visual. Realicé labores de soporte técnico con prontitud, garantizando una alta disponibilidad y resolución de problemas, lo que contribuyó al funcionamiento sin problemas de las plataformas y el portal.',
+        title: 'Fondo Verde Internacional',
+        subtitle: 'Director de Tecnologías de la Información',
+        description: `
+            <ul class="list-disc list-outside ml-4 space-y-2 marker:content-['✓'] marker:text-purple-400">
+                <li class="pl-2"> Dirigí y ejecuté la implementación y administración de plataformas eLearning (Moodle).</li>
+                <li class="pl-2">Supervisé la gestión de usuarios, creación de cursos y administración de contenidos.</li>
+                <li class="pl-2">Lideré la implementación del portal web institucional mediante CMS Joomla.</li>
+                <li class="pl-2">Gestioné el mantenimiento, funcionalidad y atractivo visual del portal.</li>
+                <li class="pl-2">Realicé soporte técnico garantizando alta disponibilidad y resolución de problemas.</li>
+            </ul>
+        `,
         link: 'https://www.fondoverde.org',
     },
     {
-        date: 'April 2022',
-        title: 'E-Commerce UI code in Tailwind CSS',
-        description: 'Get started with dozens of web components and interactive elements built on top of Tailwind CSS.',
-    },
-    {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        link: '#',
+        date: '2005 - 2009',
+        title: 'Instituto Geofísico del Perú',
+        subtitle: 'Operador de la Estación Central de Registro de la Red Sísmica Tablachaca – Mantaro',
+        description: `
+            <ul class="list-disc list-outside ml-4 space-y-2 marker:content-['✓'] marker:text-purple-400">
+                <li class="pl-2">Operador de la Estación Central de Registro de la Red Sísmica – Mantaro.</li>
+                <li class="pl-2">Procesamiento de sismos ocurridos.</li>
+                <li class="pl-2">Observación de la operatividad de los sistemas de Sismología.</li>
+            </ul>
+        `,
+        link: 'https://ultimosismo.igp.gob.pe/',
     },
 ];
 ---
