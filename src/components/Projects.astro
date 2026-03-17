@@ -1,6 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import projectFondoverde from '../assets/project-fondoverde.webp';
+import projectFVOpen from '../assets/fvi-project-fondoverde-open.webp';
+import projectFVInstitute from '../assets/fvi-project-fondoverde-institute.webp';
+import projectCEFPRO from '../assets/fvi-project-fondoverde-dilomados.webp';
+import projectPMA from '../assets/fvi-project-pma.webp';
+import projectAcademiaPMA from '../assets/fvi-project-academia-pma.webp';
+import projectRegistroPMA from '../assets/fvi-project-registro-pma.webp';
 
 const PROJECTS = [
     {
@@ -16,7 +22,7 @@ const PROJECTS = [
         description: "Desarrollo de la plataforma de e-learning de Fondo Verde. Implementación de funcionalidades personalizadas para mejorar la experiencia de aprendizaje y la gestión de cursos en Moodle.",
         link: "https://www.fondoverdeopen.net/",
         gitgub: "#",
-        image: projectFondoverde,
+        image: projectFVOpen,
         tags: ["Moodle", "PHP", "MySQL"]
     },
     {
@@ -24,7 +30,7 @@ const PROJECTS = [
         description: "Desarrollo del portal Fondo Verde Institute. ",
         link: "https://fondoverdeinstitute.com/",
         gitgub: "#",
-        image: projectFondoverde,
+        image: projectFVInstitute,
         tags: ["Joomla", "PHP", "MySQL"]
     },
     {
@@ -32,7 +38,7 @@ const PROJECTS = [
         description: "Desarrollo del website CEFPRO - Centro de Formación Profesional Ocupacional - Fondo Verde. Ofrece formación laboral flexible y de calidad en sostenibilidad y medio ambiente. Diplomados online para mejorar el perfil profesional del profesional.",
         link: "https://www.fondoverde.org/diplomados/",
         gitgub: "#",
-        image: projectFondoverde,
+        image: projectCEFPRO,
         tags: ["Joomla", "PHP", "SP Page Builder", "MySQL"]
     },
     {
@@ -40,7 +46,7 @@ const PROJECTS = [
         description: "Desarrollo del portal para la Certificación PMA™. El PMA™ es un programa de certificación profesional en sostenibilidad y medio ambiente que valida las competencias y conocimientos de los profesionales en el sector ambiental, promoviendo la excelencia y el desarrollo profesional en la industria verde.",
         link: "https://profesionalenmedioambiente.com/",
         gitgub: "#",
-        image: projectFondoverde,
+        image: projectPMA,
         tags: ["Joomla", "PHP", "MySQL"]
     },
     {
@@ -48,7 +54,7 @@ const PROJECTS = [
         description: "Desarrollo de la plataforma de e-learning de Academia PMA™. Implementación de funcionalidades personalizadas para mejorar la experiencia de aprendizaje y la gestión de cursos en Moodle.",
         link: "https://www.academiapma.net/",
         gitgub: "#",
-        image: projectFondoverde,
+        image: projectAcademiaPMA,
         tags: ["Moodle", "PHP", "MySQL"]
     },
     {
@@ -56,14 +62,14 @@ const PROJECTS = [
         description: "Sistema oficial de verificación de certificaciones profesionales ambientales PMA™. Ingresa un CUR para validar credenciales.",
         link: "https://www.registropma.net/",
         gitgub: "#",
-        image: projectFondoverde,
+        image: projectRegistroPMA,
         tags: ["Laravel", "PHP", "MySQL"]
     }
 ]
 ---
 {
     PROJECTS.map(({title, description, link, image, tags}) => (
-        <article>
+        <article class="pb-6">
             <h3 class="text-lg sm:text-2xl font-semibold text-gray-900 dark:text-purple-300 my-2 mt-4">{title}</h3>
             <p class="text-base sm:text-lg mb-4 font-normal text-gray-600 dark:text-gray-300 text-pretty">{description}</p>
             <ul class="flex gap-x4 flex-row mb-2">
@@ -79,7 +85,7 @@ const PROJECTS = [
                 class="rounded-3xl border-3 border-slate-400 shadow-2xl shadow-white/20 transition-all duration-500 hover:scale-105 hover:rotate-1 hover:border-purple-400"
                 src={image} alt={`Captura de pantalla del proyecto: ${title}`} 
             />
-            <a href={link} target="_blank" class="inline-flex items-center text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-700 box-border border border-gray-300 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none mt-4">
+            <a href={link} target="_blank" class="inline-flex items-center text-gray-600 dark:text-gray-100 bg-gray-200 dark:bg-purple-700 box-border border border-gray-300 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-purple-600 transition-colors duration-500 hover:text-gray-900 dark:hover:text-white focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 shadow-xs font-medium leading-5 rounded-lg text-sm px-4 py-2.5 focus:outline-none mt-4">
                 Ver proyecto {" "}
                 <svg class="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
             </a>

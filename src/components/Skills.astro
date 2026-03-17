@@ -1,0 +1,37 @@
+---
+import HtmlIcon from './icons/Html.astro';
+import CssIcon from './icons/Css.astro';
+import JavascriptIcon from './icons/Javascript.astro';
+import AstroIcon from './icons/AstroIcon.astro';
+import GitHubIcon from './icons/GitHub.astro';
+import GitIcon from './icons/Git.astro';
+import JoomlaIcon from './icons/Joomla.astro';
+import MoodleIcon from './icons/Moodle.astro';
+import PhpIcon from './icons/Php.astro';
+import MysqlIcon from './icons/Mysql.astro';
+import SeoIcon from './icons/Seo.astro';
+
+const SKILLS = [
+    { name: 'HTML', icon: HtmlIcon },
+    { name: 'CSS', icon: CssIcon },
+    { name: 'JavaScript', icon: JavascriptIcon },
+    { name: 'Astro', icon: AstroIcon },
+    { name: 'GitHub', icon: GitHubIcon },
+    { name: 'Git', icon: GitIcon },
+    { name: 'Joomla', icon: JoomlaIcon },
+    { name: 'Moodle', icon: MoodleIcon },
+    { name: 'PHP', icon: PhpIcon },
+    { name: 'MySQL', icon: MysqlIcon },
+    { name: 'SEO', icon: SeoIcon }
+];
+---
+<div class="flex flex-wrap gap-4 mt-8 justify-center">
+    {
+        SKILLS.map((skill) => (
+            <span class="bg-white/5 rounded-full border border-white/10 flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 text-xs md:text-base hover:scale-110 hover:bg-white/10 transition cursor-default">
+                {skill.icon && <skill.icon class="size-4 md:size-6" />}
+                {skill.name}
+            </span>
+        ))
+    }
+</div>

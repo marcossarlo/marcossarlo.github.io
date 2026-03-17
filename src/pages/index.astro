@@ -8,13 +8,15 @@ import Projects from '../components/Projects.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import AboutMe from '../components/AboutMe.astro';
 import MarcosSarLo from '../components/MarcosSarLo.astro';
+import Skills from '../components/Skills.astro';
+import SkillsIcon from '../components/icons/Skills.astro';
 ---
 
 <Layout title="Portfolio de MARCOSSARLO" description="Portafolio de Marcossarlo, ingeniero informático con experiencia en desarrollo web y gestión de plataformas de e-learning.">	
 	<main class="px-4">
 		<!-- Hero Section -->
 		<SectionContainer class="py-30">
-			<MarcosSarLo />			
+			<MarcosSarLo />
 		</SectionContainer>
 
 		<!-- ACERCA DE MÍ -->
@@ -43,6 +45,15 @@ import MarcosSarLo from '../components/MarcosSarLo.astro';
 			</h2>
 			<Projects />
 		</SectionContainer>	
+
+		<!-- HABILIDADES -->
+		<SectionContainer id="habilidades" class="py-20">
+			<h2 class="text-2xl sm:text-3xl font-semibold mb-6 flex items-center gap-x-3">
+				<SkillsIcon class="size-7 text-purple-400" />
+				Habilidades
+			</h2>
+			<Skills />
+		</SectionContainer>
 		
 	</main>
 </Layout>
