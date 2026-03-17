@@ -1,45 +1,41 @@
-# Astro Starter Kit: Basics
+# MarcosSarLo - Portfolio Personal
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este es mi portfolio personal construido con **Astro** y **Tailwind CSS**. Un espacio donde muestro mi experiencia, proyectos y habilidades como desarrollador.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Screenshot de la web](./src/assets/marcossarlo.webp)
 
-## 🚀 Project Structure
+## 🚀 Tecnologías
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Astro**: Framework web para sitios orientados al contenido.
+- **Tailwind CSS**: Framework CSS de utilidad para el diseño.
+- **Iconos**: Custom icons y componentes Astro.
+
+## 📁 Estructura del Proyecto
+
+Dentro de este proyecto Astro, encontrarás los siguientes archivos y carpetas:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── public/          # Activos estáticos
 ├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+│   ├── assets/      # Imágenes y recursos locales
+│   ├── components/  # Componentes Astro reutilizables
+│   ├── layouts/     # Plantillas de página
+│   └── pages/       # Rutas del sitio (.astro)
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 Comandos
 
-## 🧞 Commands
+Todos los comandos se ejecutan desde la raíz del proyecto, en una terminal:
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala las dependencias                         |
+| `npm run dev`             | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build`           | Construye el sitio para producción en `./dist/`  |
+| `npm run preview`         | Previsualiza la construcción localmente          |
+| `npm run astro ...`       | Ejecuta comandos de la CLI de Astro              |
 
 ## 👀 Want to learn more?
 
